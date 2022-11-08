@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
+import {Link,useLocation,useNavigate} from 'react-router-dom'
 import image from '../../../asserts/login/login.svg'
 const Login=()=>{
     const{login}= useContext(AuthContext)
+    const location= useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathename || '/'
     const handleSubmit=event=>{
         event.preventDefault()
         const form= event.target;
@@ -10,7 +14,7 @@ const Login=()=>{
         const password= form.password.value
         login(email,password)
         .then(res=>{
-
+          navigate(from, {replace:true})
         })
         .catch(er=>console.log(er))
     }
@@ -40,6 +44,7 @@ const Login=()=>{
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
+          <h4>New to this site? Please <Link className="text-orange-400" to='/signup'>signup</Link></h4>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
