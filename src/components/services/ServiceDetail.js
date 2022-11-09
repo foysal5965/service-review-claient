@@ -1,11 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from "../contexts/AuthProvider";
+import Review from "../review/Review";
+
+
 const ServiceDetail = () => {
+    
     const selectedService = useLoaderData()
+    
     const{user}= useContext(AuthContext)
     const{img,title,detail,fee,duration,_id}= selectedService;
-    const [reviews, setReviews]= useState([])
+    
+    
+    
+
+   
     const handleSubmit=event=>{
         event.preventDefault()
         const form= event.target;
@@ -13,16 +22,18 @@ const ServiceDetail = () => {
         const email= user?.email
         const phone= form.phone.value;
         const message= form.massege.value;
+        const img= user?.photoURL
         const review={
             serviceId:_id,
-            sserviceName:title,
+            serviceName:title,
             customerName:name,
             email,
+            img,
             phone,
             message
         }
         console.log(review)
-        fetch('http://localhost:5000/review',{
+        fetch('https://assignment-server-ochre.vercel.app/review',{
             method:"POST",
             headers:{
                 "content-type": "application/json"
@@ -32,11 +43,12 @@ const ServiceDetail = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-           
-            setReviews(data)
             form.reset()
         })
+  
+     
     }
+   
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl mt-12">
@@ -65,13 +77,14 @@ const ServiceDetail = () => {
             <textarea name="massege" className="textarea w-full textarea-bordered mt-6" placeholder="Your massege"></textarea>
             <button className="btn btn-primary">Review</button>
         </form>
-        {
-            reviews.length
-        }
+      
+     <Review></Review>
+    
                 </>:
                 <h5>please loging</h5>
             }
+       
         </div>
     )
 }
-export default ServiceDetail
+export default ServiceDetail;
