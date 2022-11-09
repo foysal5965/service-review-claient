@@ -61,10 +61,11 @@ const ServiceDetail = () => {
                    
                 </div>
             </div>
+            <h4 className="text-2xl font-bold text-center mt-6 text-orange-400">Reviw the service</h4>
             {
                 user?.email ?
                 <>
-                <h4 className="text-2xl font-bold text-center mt-6">Reviw the service</h4>
+              
             <form className="mt-20" onSubmit={handleSubmit}>
             
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mt-16">
@@ -81,7 +82,7 @@ const ServiceDetail = () => {
      <Review></Review>
     
                 </>:
-                <h5>please loging</h5>
+                <h5 className="text-xl font-bold text-center mt-12">please loging to add a review</h5>
             }
        
         </div>

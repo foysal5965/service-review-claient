@@ -1,3 +1,4 @@
+import AddReviews from "../components/AddReviews/AddReviews";
 import Login from "../components/contexts/loging/Login";
 import Home from "../components/home/Home";
 import MyReview from "../components/MyReviews/MyReview";
@@ -6,6 +7,7 @@ import Review from "../components/review/Review";
 import AllServices from "../components/services/AllServices";
 import ServiceDetail from "../components/services/ServiceDetail";
 import Main from "../layouts/Main";
+import PrivetRoute from "./PrivetRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -44,12 +46,16 @@ const { createBrowserRouter } = require("react-router-dom");
             },
             {
                 path:'/myreviews',
-                element:<MyReview></MyReview>
+                element:<PrivetRoute><MyReview></MyReview></PrivetRoute>
             },
             {
                 path:'/review/:id',
                 element:<Review></Review>,
                 loader:({params})=>fetch(`https://assignment-server-ochre.vercel.app/review/${params.id}`)
+            },
+            {
+                path:'/addServices',
+                element:<PrivetRoute><AddReviews></AddReviews></PrivetRoute>
             }
           
         ]

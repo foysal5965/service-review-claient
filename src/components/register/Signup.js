@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 import image from '../../asserts/login/login.svg'
+import { useLocation, useNavigate } from "react-router-dom";
+import {FaGoogle} from 'react-icons/fa'
 const Signup = () => {
     const{createUser}= useContext(AuthContext);
+    const location =useLocation();
+    const nevigate= useNavigate();
+    const from=location.state?.from?.pathename || '/'
     const handleSubmit=event=>{
         event.preventDefault();
         const form= event.target;
@@ -11,7 +16,7 @@ const Signup = () => {
         console.log(email,password)
         createUser(email,password)
         .then(result=>{
-            console.log(result.user)
+           nevigate(from, {replace:true})
         })
         .catch(er=>console.log(er))
 
@@ -45,6 +50,7 @@ const Signup = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+                            <div><FaGoogle></FaGoogle></div>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Signup</button>

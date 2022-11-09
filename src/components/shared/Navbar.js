@@ -16,6 +16,7 @@ const Navbar = () => {
                 user?.email ?
                 <>
                 <Link to='/myreviews'>My Reviews</Link>
+                <Link to='addServices'>Add Reviews</Link>
                 <button onClick={handleLogout} className="btn-ghost">Sign Out</button>
                 </> :
                 <Link to='/login'>Login</Link>

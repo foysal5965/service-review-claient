@@ -10,13 +10,30 @@ const MyReview = () => {
             .then(data => {
                 setReviews(data)
             })
-    }, [user?.email])
+    }, [user?.email]);
+    const handleDelete=id=>{
+        const procced = window.confirm('are you sure to delete the review');
+        if (procced) {
+            fetch(`https://assignment-server-ochre.vercel.app/myreviews/${id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount>0){
+                        alert('deleted successfully')
+                        const remaining = reviews.filter(rev=>rev._id!==id)
+                        setReviews(remaining)
+                    }
+                })
+    }
+}
     return (
         <div className="grid grid-cols-3 gap-6 mt-12">
            {
     reviews.map(review=><MyReviewCard
     key={review._id}
     review={review}
+    handleDelete={handleDelete}
     ></MyReviewCard>)
 }
         </div>
