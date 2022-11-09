@@ -12,11 +12,12 @@ const Navbar = () => {
     const menuItem = <>
         <li>
             <Link to='home'>Home</Link>
+            <Link to='blog'>Blog</Link>
             {
                 user?.email ?
                 <>
                 <Link to='/myreviews'>My Reviews</Link>
-                <Link to='addServices'>Add Reviews</Link>
+                <Link to='addServices'>Add Services</Link>
                 <button onClick={handleLogout} className="btn-ghost">Sign Out</button>
                 </> :
                 <Link to='/login'>Login</Link>

@@ -1,4 +1,5 @@
 import AddReviews from "../components/AddReviews/AddReviews";
+import Blog from "../components/BLOGS/Blog";
 import Login from "../components/contexts/loging/Login";
 import Home from "../components/home/Home";
 import MyReview from "../components/MyReviews/MyReview";
@@ -56,6 +57,10 @@ const { createBrowserRouter } = require("react-router-dom");
             {
                 path:'/addServices',
                 element:<PrivetRoute><AddReviews></AddReviews></PrivetRoute>
+            },
+            {
+                path:'blog',
+                element:<Blog></Blog>
             }
           
         ]

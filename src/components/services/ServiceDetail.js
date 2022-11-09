@@ -51,8 +51,8 @@ const ServiceDetail = () => {
    
     return (
         <div>
-            <div className="card card-side bg-base-100 shadow-xl mt-12">
-               <img src={img} className="w-full" alt="Movie" />
+            <div className="card card-side bg-base-100 shadow-xl mt-12 ">
+               <img src={img} className="w-1/2 md:w-full lg:w-full" alt="Movie" />
                 <div className="card-body">
                     <h2 className="card-title">{title}</h2>
                     <p>{detail}</p>

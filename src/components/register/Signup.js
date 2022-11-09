@@ -4,7 +4,7 @@ import image from '../../asserts/login/login.svg'
 import { useLocation, useNavigate } from "react-router-dom";
 import {FaGoogle} from 'react-icons/fa'
 const Signup = () => {
-    const{createUser}= useContext(AuthContext);
+    const{createUser,googleSignin}= useContext(AuthContext);
     const location =useLocation();
     const nevigate= useNavigate();
     const from=location.state?.from?.pathename || '/'
@@ -20,6 +20,13 @@ const Signup = () => {
         })
         .catch(er=>console.log(er))
 
+    }
+    const handleGoogleSignin=()=>{
+        googleSignin()
+        .then(res=>{
+
+        })
+        .catch(err=>console.log())
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -50,7 +57,9 @@ const Signup = () => {
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
-                            <div><FaGoogle></FaGoogle></div>
+                            <p className="text-sm text-center text-blue-500 font-bold">Singup with social accounts</p>
+                            <button className="d
+                            flex justify-center mt-4" onClick={handleGoogleSignin}><FaGoogle></FaGoogle></button>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Signup</button>

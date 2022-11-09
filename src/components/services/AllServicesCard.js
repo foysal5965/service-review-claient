@@ -7,7 +7,7 @@ const AllServicesCard=({services})=>{
   <figure><img src={img} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
-    <p>{detail.slice(0,100)+'...'}</p>
+    <p>{detail.slice(0,200)+'...'}</p>
     <div className="card-actions justify-center">
       <Link to={`/allServices/${_id}`}>
       <button className="btn btn-primary">Details</button>
