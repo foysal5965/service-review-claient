@@ -1,6 +1,6 @@
 import React from "react";
 import swal from "sweetalert";
-const AddReviews = () => {
+const AddServices = () => {
     const handleSubmit = event => {
         event.preventDefault()
         const form= event.target;
@@ -49,4 +49,4 @@ const AddReviews = () => {
         </div>
     )
 }
-export default AddReviews
+export default AddServices

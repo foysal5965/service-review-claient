@@ -11,6 +11,7 @@ const Review=({_id})=>{
         fetch(`https://assignment-server-ochre.vercel.app/review`)
         .then(res=>res.json())
         .then(data=>{
+          
             setReviews(data)
         })
     },[])

@@ -1,6 +1,8 @@
-import AddReviews from "../components/AddReviews/AddReviews";
+
+import AddServices from "../components/AddServices/AddServices";
 import Blog from "../components/BLOGS/Blog";
 import Login from "../components/contexts/loging/Login";
+import ErrorPage from "../components/ErrorPage";
 import Home from "../components/home/Home";
 import MyReview from "../components/MyReviews/MyReview";
 import Signup from "../components/register/Signup";
@@ -16,6 +18,7 @@ const { createBrowserRouter } = require("react-router-dom");
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
@@ -56,7 +59,7 @@ const { createBrowserRouter } = require("react-router-dom");
             },
             {
                 path:'/addServices',
-                element:<PrivetRoute><AddReviews></AddReviews></PrivetRoute>
+                element:<PrivetRoute><AddServices></AddServices></PrivetRoute>
             },
             {
                 path:'blog',
