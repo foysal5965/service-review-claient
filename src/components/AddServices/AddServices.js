@@ -38,12 +38,12 @@ const AddServices = () => {
             <form onSubmit={handleSubmit}>
                 <div className="mt-16">
 
-                    <input type="text" name="title" placeholder="title"  className="input input-ghost w-full input-bordered mt-6" /><br />
-                    <input type="text" name="img" placeholder="image"  className="input input-ghost w-full input-bordered  mt-6" /><br />
+                    <input type="text" name="title" placeholder="title"  className="input input-ghost w-full input-bordered mt-6" required/><br />
+                    <input type="text" name="img" placeholder="image"  className="input input-ghost w-full input-bordered  mt-6" required/><br />
                     
-                    <input type="text" placeholder="fee" name="fee"  className="input input-ghost w-full input-bordered mt-6" /><br />
-                    <textarea name="detail"  className="textarea w-full textarea-bordered mt-6" placeholder="details"></textarea><br />
-                    <input type="submit" value="add service" />
+                    <input type="text" placeholder="fee" name="fee"  className="input input-ghost w-full input-bordered mt-6" required/><br />
+                    <textarea name="detail"  className="textarea w-full textarea-bordered mt-6" placeholder="details" required></textarea><br />
+                    <button className="btn btn-primary"><input type="submit" value="add service" /></button>
                 </div>
             </form>
         </div>
