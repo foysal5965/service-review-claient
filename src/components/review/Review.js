@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 import ReviewCard from "./ReviewCard";
 const Review=({_id})=>{
     const [reviews, setReviews]= useState([]);
    
-   console.log(_id)
+   
    
 
     useEffect(()=>{
         fetch(`https://assignment-server-ochre.vercel.app/review`)
         .then(res=>res.json())
         .then(data=>{
-          
+          console.log(data)
             setReviews(data)
+          
         })
     },[])
     return(

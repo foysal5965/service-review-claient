@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from 'react-router-dom'
+import swal from "sweetalert";
 import { AuthContext } from "../contexts/AuthProvider";
 import Review from "../review/Review";
 
@@ -43,6 +44,9 @@ const ServiceDetail = () => {
         })
         .then(res=>res.json())
         .then(data=>{
+            if(data.acknowledged){
+                swal('yor review added succesfuly')
+            }
             form.reset()
         })
   

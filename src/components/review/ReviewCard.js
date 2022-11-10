@@ -1,7 +1,7 @@
 import React from "react";
 import logo from '../../asserts/avatar.png'
 const ReviewCard=({rev})=>{
-    const {message,customerName,img}=rev
+    const {message,customerName,img,serviceName}=rev
 
     return (
         <div>
@@ -15,7 +15,8 @@ const ReviewCard=({rev})=>{
     }
   </div>
 </div>
-    <h2 className="card-title">{customerName}!</h2>
+<h2 className="card-title">{serviceName}</h2>
+    <h2 className="text-xl font-semi-bold ">{customerName}</h2>
     <p>{message}</p>
     <div className="card-actions justify-end">
      
