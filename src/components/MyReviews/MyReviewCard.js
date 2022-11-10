@@ -22,11 +22,9 @@ const MyReviewCard=({review,handleDelete})=>{
     <p>{review.message}</p>
     <div className="card-actions justify-end">
       <button onClick={()=>handleDelete(_id)} className="btn btn-primary">Delete Now</button>
-      <button className="btn btn-primary">Update Now</button>
+   
     </div>
-    <div className="card-actions justify-end">
-     
-    </div>
+    
   </div>
 </div>
         </div>

@@ -74,12 +74,12 @@ const ServiceDetail = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mt-16">
 
-            <input type="text" name="firstname" placeholder="First Name" className="input input-ghost w-full input-bordered" />
-            <input type="text" name="lastname" placeholder="Last Name" className="input input-ghost w-full input-bordered" />
-            <input type="text" name="email" placeholder="Email"  className="input input-ghost w-full input-bordered" />
-            <input type="text" placeholder="Phone" name="phone"  className="input input-ghost w-full input-bordered" />
+            <input type="text" name="firstname" placeholder="First Name" className="input input-ghost w-full input-bordered" required/>
+            <input type="text" name="lastname" placeholder="Last Name" className="input input-ghost w-full input-bordered" required/>
+            <input type="text" name="email" placeholder="Email"  className="input input-ghost w-full input-bordered" required/>
+            <input type="text" placeholder="Phone" name="phone"  className="input input-ghost w-full input-bordered" required/>
             </div>
-            <textarea name="massege" className="textarea w-full textarea-bordered mt-6" placeholder="Your massege"></textarea>
+            <textarea name="massege" className="textarea w-full textarea-bordered mt-6" placeholder="Your massege" required></textarea>
             <button className="btn btn-primary">Review</button>
         </form>
       
