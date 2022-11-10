@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import swal from "sweetalert";
 import { AuthContext } from "../contexts/AuthProvider";
 import Review from "../review/Review";
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
      <Review></Review>
     
                 </>:
-                <h5 className="text-xl font-bold text-center mt-12">please login to add a review</h5>
+                <h5 className="text-xl font-bold text-center mt-12">please login to add a review <Link to='/login'>Login</Link></h5>
             }
        
         </div>
