@@ -86,7 +86,7 @@ const ServiceDetail = () => {
      <Review></Review>
     
                 </>:
-                <h5 className="text-xl font-bold text-center mt-12">please loging to add a review</h5>
+                <h5 className="text-xl font-bold text-center mt-12">please login to add a review</h5>
             }
        
         </div>
